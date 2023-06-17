@@ -139,7 +139,7 @@ Search.addEventListener("input",function(){
 function editNote(_id){
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
-    fetch(`https://notesbackend-ten.vercel.app/books/${_id}`)
+    fetch(`https://notesbackend-ten.vercel.app/edit/${_id}`)
     .then(response => {
       if (response.ok) {
         return response.json();
