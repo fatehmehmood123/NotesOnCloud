@@ -148,6 +148,7 @@ function editNote(_id){
       }
     })
     .then(book => {
+      console.log(book);
       // Do something with the retrieved book data
       addTitle.value = book.title;
       addTxt.value = book.body;
