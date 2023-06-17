@@ -50,7 +50,7 @@ addBtn.addEventListener("click", function (e) {
 function showNotes() {
   const token = localStorage.getItem('accessToken');
   const id = localStorage.getItem('id');
-  fetch(`https://creepy-sweatpants-mite.cyclic.app/notes/${id}`, {
+  fetch(`https://notesbackend-ten.vercel.app/notes/${id}`, {
     method: 'GET',
     headers: {
       'Authorization' : 'Bearer '+ token

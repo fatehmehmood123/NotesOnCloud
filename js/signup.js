@@ -10,7 +10,7 @@ signupBtn.addEventListener("click", (e)=>{
     password: addPassword.value
   };
   // Send the POST request to the server
-  fetch('https://creepy-sweatpants-mite.cyclic.app/register', {
+  fetch('https://notesbackend-ten.vercel.app/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
