@@ -21,6 +21,7 @@ signupBtn.addEventListener("click", (e)=>{
     if (response.ok) {
       // Book added successfully
       console.log('User added successfully');
+      window.location.href = "login.html";
       // Perform any other necessary actions after successful addition
     } else {
       // Error occurred during addition
