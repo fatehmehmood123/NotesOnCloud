@@ -29,7 +29,7 @@ loginBtn.addEventListener("click", (e)=>{
   }).then((data) => {
     localStorage.setItem("accessToken",data.accessToken);
     localStorage.setItem("id",data._id);
-    window.location.href = 'index.html';
+    window.location.href = 'main.html';
     console.log(data);
   })
   .catch(error => {

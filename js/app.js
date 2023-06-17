@@ -16,7 +16,7 @@ addBtn.addEventListener("click", function (e) {
 
 
   // Send the POST request to the server
-  fetch(`https://creepy-sweatpants-mite.cyclic.app/${accessedUserId}`, {
+  fetch(`https://notesbackend-ten.vercel.app/${accessedUserId}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ function showNotes() {
 // Function to delete Notes
 function deleteNote(_id){
     // Send the delete request
-  fetch(`https://creepy-sweatpants-mite.cyclic.app/note/${_id}`, {
+  fetch(`https://notesbackend-ten.vercel.app/note/${_id}`, {
     method: 'DELETE',
     headers: {
       'Authorization' : 'Bearer '+ token
@@ -139,7 +139,7 @@ Search.addEventListener("input",function(){
 function editNote(_id){
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
-    fetch(`https://creepy-sweatpants-mite.cyclic.app/books/${_id}`)
+    fetch(`https://notesbackend-ten.vercel.app/books/${_id}`)
     .then(response => {
       if (response.ok) {
         return response.json();
