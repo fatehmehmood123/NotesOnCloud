@@ -12,7 +12,6 @@ loginBtn.addEventListener("click", (e)=>{
   // Send the POST request to the server
   fetch('https://creepy-sweatpants-mite.cyclic.app/login', {
     method: 'POST',
-    mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -20,7 +19,7 @@ loginBtn.addEventListener("click", (e)=>{
   })
   .then(response => {
     if (response.ok) {
-      // Book added successfully
+      // Note added successfully
     return response.json();
       // Perform any other necessary actions after successful addition
     } else {
