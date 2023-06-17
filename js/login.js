@@ -12,6 +12,7 @@ loginBtn.addEventListener("click", (e)=>{
   // Send the POST request to the server
   fetch('https://creepy-sweatpants-mite.cyclic.app/login', {
     method: 'POST',
+    mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json'
     },
