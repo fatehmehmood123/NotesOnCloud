@@ -1,7 +1,7 @@
 let addTitle = document.getElementById("addTitle").focus();
 showNotes();
 
-// funtion to add notesf
+// funtion to add notes
 var token = localStorage.getItem("accessToken");
 var accessedUserId = localStorage.getItem("id");
 addBtn.addEventListener("click", function (e) {
@@ -16,7 +16,7 @@ addBtn.addEventListener("click", function (e) {
 
 
   // Send the POST request to the server
-  fetch(`https://notesbackend-ten.vercel.app/${accessedUserId}`, {
+  fetch(`https://notesbackend-ten.vercel.app/add/${accessedUserId}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
