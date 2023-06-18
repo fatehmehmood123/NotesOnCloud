@@ -1,9 +1,12 @@
 let addTitle = document.getElementById("addTitle").focus();
-showNotes();
 
 // funtion to add notes
 var token = localStorage.getItem("accessToken");
 var accessedUserId = localStorage.getItem("id");
+if(token){
+  showNotes();
+}
+console.log(window.location.pathname);
 addBtn.addEventListener("click", function (e) {
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
@@ -126,7 +129,7 @@ Search.addEventListener("input",function(){
     Array.from(noteCards).forEach(function(element){
          let cardTxt = element.getElementsByTagName('p')[0].innerText;
          let cardTitle = element.getElementsByTagName('h5')[0].innerText;
-       
+
         if(cardTxt.toLowerCase().includes(inputVal) || cardTitle.toLowerCase().includes(inputVal)  ){
             element.style.display="block";
         }else{
@@ -164,3 +167,10 @@ logoutBtn.addEventListener("click",()=>{
   localStorage.clear();
   window.location.href = 'login.html';
 });
+
+const loginLink = document.getElementById("loginLink");
+const token1 = localStorage.getItem("accessToken");
+if(token1){
+  loginLink.style.display = "none";
+  console.log("check");
+}

@@ -2,7 +2,7 @@ console.log("login.js");
 let addEmail = document.getElementById("addEmail");
 let addPassword = document.getElementById("addPassword");
 let loginBtn = document.getElementById("loginBtn");
-var loginLink = document.getElementById("loginLink");
+
 
 loginBtn.addEventListener("click", (e)=>{
      // Create an object with the book data
@@ -31,8 +31,9 @@ loginBtn.addEventListener("click", (e)=>{
     localStorage.setItem("accessToken",data.accessToken);
     localStorage.setItem("id",data._id);
     window.location.href = 'index.html';
-    loginLink.style.display = "none";
-    console.log(data);
+    // const loginLink = document.getElementById("loginLink");
+    // loginLink.style.display = "none";
+    // console.log(data);
   })
   .catch(error => {
     // Network error occurred
