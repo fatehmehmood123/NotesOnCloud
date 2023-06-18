@@ -10,8 +10,8 @@ console.log(window.location.pathname);
 addBtn.addEventListener("click", function (e) {
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
-  // Create an object with the book data
-  let bookData = {
+  // Create an object with the Note data
+  let noteData = {
     title: addTitle.value,
     body: addTxt.value,
     userId : accessedUserId
@@ -25,17 +25,17 @@ addBtn.addEventListener("click", function (e) {
       'Content-Type': 'application/json',
       'Authorization' : 'Bearer '+ token
     },
-    body: JSON.stringify(bookData)
+    body: JSON.stringify(noteData)
   })
   .then(response => {
     if (response.ok) {
-      // Book added successfully
-      console.log('Book added successfully');
+      // Note added successfully
+      console.log('Note added successfully');
       // Perform any other necessary actions after successful addition
       showNotes();
     } else {
       // Error occurred during addition
-      console.error('Error adding book:', response.statusText);
+      console.error('Error adding Note:', response.statusText);
     }
   })
   .catch(error => {
@@ -98,7 +98,7 @@ function showNotes() {
 // Function to delete Notes
 function deleteNote(_id){
     // Send the delete request
-  fetch(`https://notesbackend-ten.vercel.app/note/${_id}`, {
+  fetch(`https://notesbackend-ten.vercel.app/note/${accessedUserId}/${_id}`, {
     method: 'DELETE',
     headers: {
       'Authorization' : 'Bearer '+ token
@@ -107,12 +107,12 @@ function deleteNote(_id){
     .then(response => {
       if (response.ok) {
         // Deletion successful
-        console.log('Book deleted successfully');
+        console.log('Note deleted successfully');
         showNotes();
         // Perform any other necessary actions after successful deletion
       } else {
         // Error occurred during deletion
-        console.error('Error deleting book:', response.statusText);
+        console.error('Error deleting Note:', response.statusText);
       }
     })
     .catch(error => {
@@ -142,19 +142,23 @@ Search.addEventListener("input",function(){
 function editNote(_id){
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
-    fetch(`https://notesbackend-ten.vercel.app/edit/${_id}`)
+    fetch(`https://notesbackend-ten.vercel.app/edit/${accessedUserId}/${_id}`,{
+      method: 'GET',
+      headers: {
+        'Authorization' : 'Bearer '+ token
+      }
+    })
     .then(response => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Error retrieving book');
+        throw new Error('Error retrieving Note');
       }
     })
-    .then(book => {
-      
-      // Do something with the retrieved book data
-      addTitle.value = book[0].title;
-      addTxt.value = book[0].body;
+    .then(note => {
+      // Do something with the retrieved Note data
+      addTitle.value = note[0].title;
+      addTxt.value = note[0].body;
     })
     .catch(error => {
       console.error('Error:', error);
