@@ -6,7 +6,6 @@ var accessedUserId = localStorage.getItem("id");
 if(token){
   showNotes();
 }
-console.log(window.location.pathname);
 addBtn.addEventListener("click", function (e) {
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
