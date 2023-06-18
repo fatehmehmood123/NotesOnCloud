@@ -1,7 +1,19 @@
 console.log("signup.js");
 let addEmail = document.getElementById("addEmail");
 let addPassword = document.getElementById("addPassword");
+let addConfirmPassword = document.getElementById("addConfirmPassword");
 let signupBtn = document.getElementById("signupBtn");
+function checkPasswordMatch() {
+  if (addPassword.value === addConfirmPassword.value && addPassword.value !== "") {
+    signupBtn.classList.remove("disabled");
+  }else{
+    signupBtn.classList.add("disabled");
+    
+  }
+}
+addPassword.addEventListener("input", checkPasswordMatch);
+addConfirmPassword.addEventListener("input", checkPasswordMatch);
+
 
 signupBtn.addEventListener("click", (e)=>{
      // Create an object with the book data
@@ -38,14 +50,14 @@ signupBtn.addEventListener("click", (e)=>{
     e.preventDefault();
     addEmail.value = "";
     addPassword.value = "";
+    addConfirmPassword.value = "";
 });
-function togglePasswordVisibility() {
-  const passwordInput = document.getElementById('addPassword');
-  const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
-  
-  if (showPasswordCheckbox.checked) {
-    passwordInput.type = 'text';
+
+function togglePasswordVisibility(elementId) {
+  const passwordField = document.getElementById(elementId);
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
   } else {
-    passwordInput.type = 'password';
+    passwordField.type = "password";
   }
 }
