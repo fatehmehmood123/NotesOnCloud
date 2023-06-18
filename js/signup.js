@@ -39,3 +39,13 @@ signupBtn.addEventListener("click", (e)=>{
     addEmail.value = "";
     addPassword.value = "";
 });
+function togglePasswordVisibility() {
+  const passwordInput = document.getElementById('addPassword');
+  const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+  
+  if (showPasswordCheckbox.checked) {
+    passwordInput.type = 'text';
+  } else {
+    passwordInput.type = 'password';
+  }
+}
