@@ -169,8 +169,9 @@ logoutBtn.addEventListener("click",()=>{
 });
 
 const loginLink = document.getElementById("loginLink");
+const signupLink = document.getElementById("signupLink");
 const token1 = localStorage.getItem("accessToken");
 if(token1){
   loginLink.style.display = "none";
-  console.log("check");
+  signupLink.style.display = "none";
 }
