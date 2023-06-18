@@ -158,3 +158,9 @@ function editNote(_id){
     });
     deleteNote(_id);
 }
+
+const logoutBtn = document.getElementById("logoutBtn");
+logoutBtn.addEventListener("click",()=>{
+  localStorage.clear();
+  window.location.href = 'login.html';
+});
