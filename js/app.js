@@ -156,6 +156,7 @@ function editNote(_id){
       }
     })
     .then(note => {
+      console.log(note);
       // Do something with the retrieved Note data
       addTitle.value = note[0].title;
       addTxt.value = note[0].body;
@@ -163,7 +164,7 @@ function editNote(_id){
     .catch(error => {
       console.error('Error:', error);
     });
-    deleteNote(_id);
+    // deleteNote(_id);
 }
 
 const logoutBtn = document.getElementById("logoutBtn");
