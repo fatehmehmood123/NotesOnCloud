@@ -164,7 +164,7 @@ function editNote(_id){
     .catch(error => {
       console.error('Error:', error);
     });
-    // deleteNote(_id);
+    deleteNote(_id);
 }
 
 const logoutBtn = document.getElementById("logoutBtn");
