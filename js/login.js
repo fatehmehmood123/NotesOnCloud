@@ -20,7 +20,9 @@ loginBtn.addEventListener("click", (e)=>{
   })
   .then(response => {
     if (response.ok) {
-      // Note added successfully
+      // Note added successfully  
+      console.log("user added Successfully");
+      // alert("added")
     return response.json();
       // Perform any other necessary actions after successful addition
     } else {
@@ -31,9 +33,6 @@ loginBtn.addEventListener("click", (e)=>{
     localStorage.setItem("accessToken",data.accessToken);
     localStorage.setItem("id",data._id);
     window.location.href = 'index.html';
-    // const loginLink = document.getElementById("loginLink");
-    // loginLink.style.display = "none";
-    // console.log(data);
   })
   .catch(error => {
     // Network error occurred
