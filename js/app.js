@@ -141,7 +141,7 @@ Search.addEventListener("input",function(){
 function editNote(_id){
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
-    const apiUrl = `https://notesbackend-ten.vercel.app/edit/${accessedUserId}/${_id}`;
+    const apiUrl = `https://notesbackend-ten.vercel.app/edit/${_id}`;
     fetch(apiUrl,{
       method: 'GET',
       headers: {
@@ -160,11 +160,12 @@ function editNote(_id){
       // Do something with the retrieved Note data
       addTitle.value = note[0].title;
       addTxt.value = note[0].body;
+      deleteNote(_id);
     })
     .catch(error => {
       console.error('Error:', error);
     });
-    deleteNote(_id);
+   
 }
 
 const logoutBtn = document.getElementById("logoutBtn");
