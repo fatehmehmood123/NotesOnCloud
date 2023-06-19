@@ -141,7 +141,7 @@ Search.addEventListener("input",function(){
 function editNote(_id){
     let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
-    const apiUrl = `https://notesbackend-ten.vercel.app/edit/${_id}`;
+    const apiUrl = `https://notesbackend-ten.vercel.app/edit/${accessedUserId}/${_id}`;
     fetch(apiUrl,{
       method: 'GET',
       headers: {
