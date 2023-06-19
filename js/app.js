@@ -16,7 +16,6 @@ addBtn.addEventListener("click", function (e) {
     userId : accessedUserId
   };
 
-
   // Send the POST request to the server
   fetch(`https://notesbackend-ten.vercel.app/add/${accessedUserId}`, {
     method: 'POST',
@@ -181,3 +180,4 @@ if(token1){
   loginLink.style.display = "none";
   signupLink.style.display = "none";
 }
+
