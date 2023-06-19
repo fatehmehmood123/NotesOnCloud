@@ -44,15 +44,10 @@ This is a note-taking website that allows users to create, edit, and delete note
 ## Future Enhancements
 
 - **User Profile:** Allow users to update their profile information.
-
 - **Sharing:** Enable users to share notes with others.
-
 - **Tags or Categories:** Add functionality to organize notes using tags or categories.
-
 - **Checkbox Functionality for Todo:** Implement checkboxes for todo items to mark them as complete or incomplete.
-
 - **Email Verification:** Implement an email verification process during signup to ensure the validity of user email addresses.
-
 - **Forgot Password:** Add a "Forgot Password" feature that allows users to reset their passwords through a password reset email.
 
 These enhancements will further enhance the functionality and user experience of the note-taking website.
