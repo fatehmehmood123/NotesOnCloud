@@ -3,6 +3,15 @@ let addTitle = document.getElementById("addTitle").focus();
 // funtion to add notes
 var token = localStorage.getItem("accessToken");
 var accessedUserId = localStorage.getItem("id");
+      const threeDaysInMilliseconds = 10000; // 3 days in milliseconds
+      const currentTime = Date.now();
+      const targetTime = currentTime + threeDaysInMilliseconds;
+      const timeRemaining = targetTime - currentTime;
+      console.log(timeRemaining);
+      setTimeout(function() {
+      localStorage.clear();
+      console.log("Task executed after 3 days.");
+    }, timeRemaining);
 if(token){
   showNotes();
 }
@@ -28,7 +37,6 @@ addBtn.addEventListener("click", function (e) {
   .then(response => {
     if (response.ok) {
       // Note added successfully
-      console.log('Note added successfully');
       // Perform any other necessary actions after successful addition
       showNotes();
     } else {
@@ -105,7 +113,7 @@ function deleteNote(_id){
     .then(response => {
       if (response.ok) {
         // Deletion successful
-        console.log('Note deleted successfully');
+        
         showNotes();
         // Perform any other necessary actions after successful deletion
       } else {
@@ -155,7 +163,7 @@ function editNote(_id){
       }
     })
     .then(note => {
-      console.log(note);
+      
       // Do something with the retrieved Note data
       addTitle.value = note[0].title;
       addTxt.value = note[0].body;
@@ -173,6 +181,7 @@ logoutBtn.addEventListener("click",()=>{
   window.location.href = 'login.html';
 });
 
+setInterval
 const loginLink = document.getElementById("loginLink");
 const signupLink = document.getElementById("signupLink");
 const token1 = localStorage.getItem("accessToken");

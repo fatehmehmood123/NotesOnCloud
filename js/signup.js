@@ -1,4 +1,3 @@
-console.log("signup.js");
 let addEmail = document.getElementById("addEmail");
 let addPassword = document.getElementById("addPassword");
 let addConfirmPassword = document.getElementById("addConfirmPassword");
@@ -32,7 +31,7 @@ signupBtn.addEventListener("click", (e)=>{
   .then(response => {
     if (response.ok) {
       // Book added successfully
-      console.log('User added successfully');
+     
       window.location.href = "login.html";
       // Perform any other necessary actions after successful addition
     } else {
@@ -44,9 +43,6 @@ signupBtn.addEventListener("click", (e)=>{
     // Network error occurred
     console.error('Network error:', error);
   });
-
-    console.log(addEmail.value);
-    console.log(addPassword.value);
     e.preventDefault();
     addEmail.value = "";
     addPassword.value = "";

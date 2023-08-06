@@ -1,8 +1,6 @@
-console.log("login.js");
 let addEmail = document.getElementById("addEmail");
 let addPassword = document.getElementById("addPassword");
 let loginBtn = document.getElementById("loginBtn");
-
 
 loginBtn.addEventListener("click", (e)=>{
      // Create an object with the book data
@@ -21,8 +19,6 @@ loginBtn.addEventListener("click", (e)=>{
   .then(response => {
     if (response.ok) {
       // Note added successfully  
-      console.log("user added Successfully");
-      // alert("added")
     return response.json();
       // Perform any other necessary actions after successful addition
     } else {
@@ -33,14 +29,12 @@ loginBtn.addEventListener("click", (e)=>{
     localStorage.setItem("accessToken",data.accessToken);
     localStorage.setItem("id",data._id);
     window.location.href = 'index.html';
+      
   })
   .catch(error => {
     // Network error occurred
     console.error('Network error:', error);
   });
-
-    console.log(addEmail.value);
-    console.log(addPassword.value);
     e.preventDefault();
     addEmail.value = "";
     addPassword.value = "";
