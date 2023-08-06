@@ -3,14 +3,13 @@ let addTitle = document.getElementById("addTitle").focus();
 // funtion to add notes
 var token = localStorage.getItem("accessToken");
 var accessedUserId = localStorage.getItem("id");
-      const threeDaysInMilliseconds = 10000; // 3 days in milliseconds
+      const threeDaysInMilliseconds = 6*24*60*60*1000; // 6 days in milliseconds
       const currentTime = Date.now();
       const targetTime = currentTime + threeDaysInMilliseconds;
       const timeRemaining = targetTime - currentTime;
       console.log(timeRemaining);
       setTimeout(function() {
       localStorage.clear();
-      console.log("Task executed after 3 days.");
     }, timeRemaining);
 if(token){
   showNotes();
