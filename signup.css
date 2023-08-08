@@ -1,0 +1,26 @@
+.custom{
+    border: 2.5px solid silver;
+    border-radius: 10px;
+    margin:19vh 25vw;
+}
+h2{
+    text-align: center;
+}
+@media (max-width: 500px) {
+  .custom {
+    margin: 20vh 0vw;
+  }
+}
+.wrong .fa-check
+{
+    display: none;
+}
+
+.good .fa-times
+{
+    display: none;
+}
+.valid-feedback,
+.invalid-feedback {
+  margin-left: calc(2em + 0.25rem + 1.5rem);
+}
