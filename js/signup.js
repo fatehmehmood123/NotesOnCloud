@@ -1,5 +1,5 @@
 let addEmail = document.getElementById("addEmail");
-let addPassword = document.getElementById("addPassword");
+let addPassword = document.getElementById("password-input");
 let addConfirmPassword = document.getElementById("addConfirmPassword");
 let signupBtn = document.getElementById("signupBtn");
 function checkPasswordMatch() {
