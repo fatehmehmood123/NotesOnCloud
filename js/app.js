@@ -1,5 +1,4 @@
 let addTitle = document.getElementById("addTitle").focus();
-
 // funtion to add notes
 var token = localStorage.getItem("accessToken");
 var accessedUserId = localStorage.getItem("id");
@@ -7,20 +6,25 @@ var accessedUserId = localStorage.getItem("id");
       const currentTime = Date.now();
       const targetTime = currentTime + threeDaysInMilliseconds;
       const timeRemaining = targetTime - currentTime;
-      console.log(timeRemaining);
+
       setTimeout(function() {
       localStorage.clear();
     }, timeRemaining);
 if(token){
   showNotes();
 }
+// addBtn.addEventListener("click", function (e) {
+// var content = quill.root.innerHTML;
+// console.log(content);
+// });
 addBtn.addEventListener("click", function (e) {
-    let addTxt = document.getElementById("addTxt");
+    var content = quill.root.innerHTML;
+    // let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
   // Create an object with the Note data
   let noteData = {
     title: addTitle.value,
-    body: addTxt.value,
+    body: content,
     userId : accessedUserId
   };
 
@@ -49,7 +53,8 @@ addBtn.addEventListener("click", function (e) {
   });
 
   // Clear the input fields
-  addTxt.value = "";
+  // addTxt.value = "";
+  quill.setText("");
   addTitle.value = "";
 });
 
@@ -145,7 +150,7 @@ Search.addEventListener("input",function(){
 
 // function to edit notes 
 function editNote(_id){
-    let addTxt = document.getElementById("addTxt");
+    // let addTxt = document.getElementById("addTxt");
     let addTitle = document.getElementById("addTitle");
     const apiUrl = `https://notesbackend-ten.vercel.app/edit/${accessedUserId}/${_id}`;
     fetch(apiUrl,{
@@ -165,7 +170,8 @@ function editNote(_id){
       
       // Do something with the retrieved Note data
       addTitle.value = note[0].title;
-      addTxt.value = note[0].body;
+      // addTxt.value = note[0].body;
+      quill.clipboard.dangerouslyPasteHTML(note[0].body);
       deleteNote(_id);
     })
     .catch(error => {

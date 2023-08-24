@@ -90,14 +90,14 @@
             <label for="exampleFormControlTextarea2"></label>
             <textarea
               class="form-control rounded-0"
-              id="editor"
+              id="addTxt"
               rows="3"
             ></textarea>
           </div> -->
           <div id="editor">
             <p>Hello World!</p>
             <p>Some initial <strong>bold</strong> text</p>
-            <p><br></p>
+            <p><br /></p>
           </div>
           <br />
           <button id="addBtn" class="btn btn-primary">Add Note</button>
@@ -121,16 +121,16 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js"></script>
     <script src="./js/route.js"></script>
-    <!-- <script src="./js/login.js"></script> -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
+    
     <!-- Initialize Quill editor -->
     <script>
-      var quill = new Quill("#editor", {
-        theme: "snow",
-      });
-    </script>
+        var quill = new Quill("#editor", {
+            theme: "snow",
+        });
+        </script>
+        <script src="js/app.js"></script>
+   
   </body>
 </html>
