@@ -76,9 +76,9 @@ function showNotes() {
     return response.json();
   })
   .then(data => {
-    
+    const reversedArray = data.slice().reverse();
     let html = "";
-    data.forEach(function (element, index) {
+    reversedArray.forEach(function (element, index) {
         html += `
         <div class="noteCard my-2 mx-2 card" >
         <div class="card-body">
