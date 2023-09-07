@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+</head>
+<body>
+   
+    <h1>Verify your Email by clicking this Button</h1>
+    <button id="verifyButton">Verify</button>
+</body>
+<script>
+    // Function to get the email parameter from the URL
+    function getEmailFromURL() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const email = urlParams.get('email');
+        
+        if (email) {
+            // Do something with the email (e.g., display it on the page)
+            // document.getElementById('email-display').textContent = email;
+        } else {
+            // Handle the case where the email parameter is not provided
+            alert('Email parameter not found in the URL.');
+        }
+        return email
+    }
+
+    // Call the function to retrieve and display the email
+    getEmailFromURL();
+    const verifyButton = document.getElementById("verifyButton");
+    verifyButton.addEventListener('click',()=>{
+      
+    })
+</script>
+</html>
