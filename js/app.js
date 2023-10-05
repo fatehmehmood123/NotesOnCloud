@@ -58,11 +58,15 @@ addBtn.addEventListener("click", function (e) {
   addTitle.value = "";
 });
 
-
+console.log(document.cookie);
+console.log("sjkdjejd");
 // Function to Show The written Notes
 function showNotes() {
-  const token = localStorage.getItem('accessToken');
+
+// const token = document.cookie.split('; ').find(row => row.startsWith('access_token')).split('=')[1];
+
   const id = localStorage.getItem('id');
+  const token = localStorage.getItem('accessToken');
   fetch(`https://notesbackend-ten.vercel.app/notes/${id}`, {
     method: 'GET',
     headers: {

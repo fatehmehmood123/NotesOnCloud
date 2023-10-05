@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Email Verification</title>
+    <style>
+        /* *{
+          font-family: 'Ubuntu Mono', monospace;
+        } */
+      </style>
 </head>
+
 <body>
-   
-    <h1>Verify your Email by clicking this Button</h1>
-    <button id="verifyButton">Verify</button>
+    
+    <h1 style="text-align: center;">Open the Verification link sent to you via email <br> for Account Confirmation</h1>
+    
 </body>
 <script>
     // Function to get the email parameter from the URL
@@ -29,9 +41,7 @@
 
     // Call the function to retrieve and display the email
     getEmailFromURL();
-    const verifyButton = document.getElementById("verifyButton");
-    verifyButton.addEventListener('click',()=>{
-      
-    })
+    // fetch("https://notesbackend-ten.vercel.app/verify-email",()=>{})
+    
 </script>
 </html>

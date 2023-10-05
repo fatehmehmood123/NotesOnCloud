@@ -4,6 +4,7 @@ let addEmail = document.getElementById("addEmail");
 let addPassword = document.getElementById("password-input");
 let addConfirmPassword = document.getElementById("addConfirmPassword");
 let signupBtn = document.getElementById("signupBtn");
+let errorMessage = document.getElementById("errorMessage");
 function checkPasswordMatch() {
   if (
     addPassword.value === addConfirmPassword.value &&
@@ -52,8 +53,7 @@ signupBtn.addEventListener("click", (e) => {
         // Perform any other necessary actions after successful addition
         return response.json();
       } else {
-        // Error occurred during addition
-        console.error("Error adding User:", response.statusText);
+        throw new Error(response.status);
       }
     })
     .then((data) => {
@@ -63,9 +63,14 @@ signupBtn.addEventListener("click", (e) => {
       // Redirect to the verification page with email as a query parameter
       window.location.href = `verify.html?email=${data.email}`;
     })
-    .catch((error) => {
-      // Network error occurred
-      console.error("Network error:", error);
+    .catch(error => {
+      console.error('Error:', error);
+      // Display appropriate error message to the user based on the response status code
+      if (error.message === "400") {
+        errorMessage.innerHTML = "User already exists"
+      }  else {
+        errorMessage.innerHTML = "Server error"
+      }
     });
   e.preventDefault();
   addEmail.value = "";
